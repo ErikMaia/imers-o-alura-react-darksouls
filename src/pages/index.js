@@ -18,6 +18,7 @@ const Button = styled.div`
     justify-content: center;
     align-items: center;
     transition: 0.5s;
+    cursor: pointer;
     &:hover{
         border: none;
         padding: 5px;
