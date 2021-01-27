@@ -1,29 +1,53 @@
+import {useState} from 'react'
+import {useRouter} from 'next/router'
 import styled from 'styled-components'
-import db from '../../../db.json';
+import db from '../../../db.json'
 import Widget from '../../components/Widget'
 import QuizLogo from '../../components/QuizBackground'
 import QuizBackground from '../../components/QuizBackground'
 import Footer from '../../components/Footer'
 import GitHubCorner from '../../components/GitHubCorner'
-import Head from 'next/head'
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
+import QuizContainer from '../../components/QuizContainer'
+
+export const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 222px;
+    & input, button{
+        width: 300px;
+        height: 38px;
+        margin: 20px 20px;
+    };
+    & button{
+        border: none;
+        padding: 5px;
+        background-color:${({theme})=>theme.colors['secondary-dark']};
+        opacity:100%;
+        color:white;
+        & :disabled{
+            background-color:${({theme})=>theme.colors.primary}
+        }
+    }
+    & p{
+        padding: 20px 20px;
+    }
+
+`
 
 export default function Quiz(){
-return (
+    const [name,setName] = useState<String>('')
+    const router = useRouter()
+    const inputChange = (e) => {setName(e.target.value)}
+    const formSend = (e) => {
+        e.preventDefault()
+        if(name.length > 0){
+            router.push(`/quiz/${name}`)
+        }
+    }
+    
+    return (
     <>
-        <Head>
-            <title>quiz dark souls</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </Head>
         <QuizBackground backgroundImage={db.bg}>
         <QuizContainer>
             <QuizLogo />
@@ -31,17 +55,13 @@ return (
             <Widget.Header>
                 <h1>{db.title}</h1>
             </Widget.Header>
-            <Widget.Content>
-                <p>{db.description}</p>
-            </Widget.Content>
-            </Widget>
-
-            <Widget>
-            <Widget.Content>
-                <h1>Quizes da Galera</h1>
-
-                <p>lorem ipsum dolor sit amet...</p>
-            </Widget.Content>
+            <Widget.Form>
+                <Form onSubmit={formSend}>
+                    <p>{db.description}</p>
+                    <input type="text" onChange={inputChange}/>
+                    <button type='submit' disabled={name.length===0}>Jogar</button>
+                </Form>
+            </Widget.Form>
             </Widget>
             <Footer />
         </QuizContainer>

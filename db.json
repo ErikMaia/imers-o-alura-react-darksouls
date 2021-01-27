@@ -4,25 +4,25 @@
     "description": "Boa Sorte",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
-        "description": "Essa é pra aquecer",
+        "image":"https://i.ytimg.com/vi/yyblT_u184c/mqdefault.jpg",
+        "title": "qual itens é importante para uma build de inteligencia",
         "answer": 2,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "Cajado de feiticeiro",
+          "Chama piromantica",
+          "Talismã",
+          "Espada"
         ]
       },
       {
-        "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-        "title": "Como fazer um background gradiente com css?",
+        "image": "https://i.pinimg.com/originals/c2/c6/9c/c2c69c99d6142fae25d88fa39a5e15b9.jpg",
+        "title": "Qual é o nome dessa região?",
         "description": "Faz tempo em haha",
         "answer": 0,
         "alternatives": [
-           "background: linear-gradient(#e66465, #9198e5);",
-           "background: gradient(#e66465, #9198e5);"
+           "Anor Londo",
+           "New London Ruins",
+           "Unded Burg"
         ]
       }
     ],
@@ -33,6 +33,7 @@
       "colors": {
         "primary": "#8B0000",
         "secondary": "#202326",
+        "secondary-dark": "#0e4c92",
         "mainBg": "#171B35",
         "contrastText": "#FFFFFF",
         "wrong": "#FF5722",

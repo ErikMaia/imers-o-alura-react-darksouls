@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 const Widget = styled.div`
+  display:${props => props.inVisible?'none':'flex'};
+  flex-direction:column;
   margin-top: 24px;
   margin-bottom: 24px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
@@ -36,7 +38,24 @@ Widget.Header = styled.header`
 `;
 
 Widget.Content = styled.div`
-  padding: 24px 32px 32px 32px;
+  /* padding: 24px 32px 32px 32px; */
+  & > *:first-child {
+    margin-top: 0;
+  }
+  & > *:last-child {
+    margin-bottom: 32px;
+  }
+  & * {
+    margin-left:32px;
+    margin-right:32px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+`;
+Widget.Form = styled.div`
+  padding: 24px 32px 24px 8px;
   & > *:first-child {
     margin-top: 0;
   }

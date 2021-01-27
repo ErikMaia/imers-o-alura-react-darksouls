@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import db from '../../db.json';
-import Widget from '../components/Widget'
 import QuizBackground from '../components/QuizBackground';
 import Link from 'next/link';
 import Head from 'next/head';

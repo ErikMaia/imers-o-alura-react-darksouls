@@ -1,6 +1,6 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import db from '../../db.json';
-
+import Head from 'next/head';
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -15,6 +15,9 @@ const GlobalStyle = createGlobalStyle`
     // Deixa branco no começo
     color: ${({ theme }) => theme.colors.contrastText};
   }
+  h1{
+    font-family:lato;
+  }
   html, body {
     min-height: 100vh;
   }
@@ -25,11 +28,17 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const theme = db.theme;
+const {theme} = db;
 
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+          <title>Quiz Dark Souls</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="preconnect" href="https://fonts.gstatic.com"/>
+          <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet" /> 
+      </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} />
