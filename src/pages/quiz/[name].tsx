@@ -63,7 +63,7 @@ export default function Quiz(){
                                     {valor}
                             </Option>
                         ))
-                :<h1>voc acertou</h1>
+                :<h1>você acertou ?</h1>
 
             }
                 
