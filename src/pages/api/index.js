@@ -1,6 +1,5 @@
 import db from '../../../db.json'
-import { NextApiRequest, NextApiResponse } from 'next'
-function App(req:NextApiRequest,res:NextApiResponse){
+function App(req,res){
     if (req.method === 'OPTIONS') {
         res.status(200).end();
         return;
