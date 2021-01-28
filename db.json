@@ -25,6 +25,17 @@
            "New London Ruins",
            "Unded Burg"
         ]
+      },
+      {
+        "image": "https://darksouls.wiki.fextralife.com/file/Dark-Souls/Gwyn_Lord_of_Sunlight.jpg?v=1528544832709",
+        "title": "Qual é o nome desse personagem?",
+        "description": "Faz tempo em haha",
+        "answer": 2,
+        "alternatives": [
+          "Lorian, Elder Prince & Lothric",
+          "Fume Knight",
+          "Gwyn Lord of Sunlight"
+        ]
       }
     ],
     "external": [

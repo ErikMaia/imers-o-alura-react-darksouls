@@ -10,8 +10,10 @@ const Button = styled.button`
     background-color:${({theme})=>theme.colors['secondary-dark']};
     opacity:100%;
     color:white;
+    cursor: pointer;
     & :disabled{
         background-color:${({theme})=>theme.colors.primary};
+        cursor:not-allowed;
     }
 `;
 export default Button 

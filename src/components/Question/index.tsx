@@ -15,7 +15,20 @@ const Option = styled.div`
     left: 0px;
     top: 0px;
     border-radius: 4px;
-    background-color: ${({ theme }) => theme.colors.mainBg};
+    background-color: ${({ theme, selected, win }) => {
+        if(!selected){
+            return theme.colors.mainBg
+        }
+        else if(win === true){
+            return 'green'
+        }
+        else if(win === null){
+            return 'grey'
+        }
+        else{
+            return 'red'
+        }
+    }};
     text-align: center;
     cursor: pointer;
     margin-top:5px;
@@ -60,7 +73,11 @@ const Question = ({indiceQuestion,selectOption,setVitoria}:props)=>{
                     .alternatives
                     .map((valor,index)=>
                         (
-                            <Option key={index} onClick={()=>setOption(index.toString())} >
+                            <Option 
+                                key={index} 
+                                selected={index.toString() === option} 
+                                win={win} onClick={()=>setOption(index.toString())} 
+                            >
                                 {valor}
                             </Option>
                         )
