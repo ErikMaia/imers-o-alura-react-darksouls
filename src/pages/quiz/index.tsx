@@ -15,14 +15,17 @@ export const Form = styled.form`
     flex-direction: column;
     width: 350px;
     height: 222px;
-    & input{
+    & button,input{
+        margin: 20px 0 0 25px;
         width: 300px;
+    }
+    & input{
         height: 38px;
-        margin: 20px 20px;
     }
     & p{
         padding: 20px 20px;
     }
+
 
 `
 
@@ -46,13 +49,13 @@ export default function Quiz(){
             <Widget.Header>
                 <h1>{db.title}</h1>
             </Widget.Header>
-            <Widget.Form>
+            
                 <Form onSubmit={formSend}>
                     <p>{db.description}</p>
                     <input type="text" onChange={inputChange}/>
                     <Button type='submit' disabled={name.length===0}>Jogar</Button>
                 </Form>
-            </Widget.Form>
+            
             </Widget>
             <Footer />
         </QuizContainer>
