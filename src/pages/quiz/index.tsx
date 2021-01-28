@@ -8,26 +8,17 @@ import QuizBackground from '../../components/QuizBackground'
 import Footer from '../../components/Footer'
 import GitHubCorner from '../../components/GitHubCorner'
 import QuizContainer from '../../components/QuizContainer'
+import Button from '../../components/Button'
 
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
     width: 350px;
     height: 222px;
-    & input, button{
+    & input{
         width: 300px;
         height: 38px;
         margin: 20px 20px;
-    };
-    & button{
-        border: none;
-        padding: 5px;
-        background-color:${({theme})=>theme.colors['secondary-dark']};
-        opacity:100%;
-        color:white;
-        & :disabled{
-            background-color:${({theme})=>theme.colors.primary}
-        }
     }
     & p{
         padding: 20px 20px;
@@ -59,7 +50,7 @@ export default function Quiz(){
                 <Form onSubmit={formSend}>
                     <p>{db.description}</p>
                     <input type="text" onChange={inputChange}/>
-                    <button type='submit' disabled={name.length===0}>Jogar</button>
+                    <Button type='submit' disabled={name.length===0}>Jogar</Button>
                 </Form>
             </Widget.Form>
             </Widget>
