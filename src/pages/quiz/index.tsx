@@ -1,15 +1,15 @@
-import {useState} from 'react'
-import {useRouter} from 'next/router'
-import styled from 'styled-components'
-import db from '../../../db.json'
-import Widget from '../../components/Widget'
-import QuizLogo from '../../components/QuizBackground'
-import QuizBackground from '../../components/QuizBackground'
-import Footer from '../../components/Footer'
-import GitHubCorner from '../../components/GitHubCorner'
-import QuizContainer from '../../components/QuizContainer'
-import Button from '../../components/Button'
-
+import {useState} from 'react';
+import {useRouter} from 'next/router';
+import styled from 'styled-components';
+import db from '../../../db.json';
+import Widget from '../../components/Widget';
+import QuizLogo from '../../components/QuizBackground';
+import QuizBackground from '../../components/QuizBackground';
+import Footer from '../../components/Footer';
+import GitHubCorner from '../../components/GitHubCorner';
+import QuizContainer from '../../components/QuizContainer';
+import Button from '../../components/Button';
+import AnotherQuiz from '../../components/AnotherQuiz';
 export const Form = styled.form`
     display: flex;
     flex-direction: column;
@@ -57,6 +57,7 @@ export default function Quiz(){
                 </Form>
             
             </Widget>
+            <AnotherQuiz />
             <Footer />
         </QuizContainer>
         <GitHubCorner projectUrl="https://github.com/ErikMaia" />

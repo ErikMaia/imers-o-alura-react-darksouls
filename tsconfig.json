@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/pages/api/index.js"  ],
+, "src/pages/api/index.js", "src/components/Loading/index.js", "src/pages/api/winner.ts"  ],
   "exclude": [
     "node_modules"
   ]
