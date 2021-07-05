@@ -62,11 +62,7 @@ export default function Quiz({db}){
                     selectOption={selectOption} 
                     setVitoria={contVitoria}
                 />}
-                {currentState===2&&
-                    <TelaFinal 
-                        name={name[0]} 
-                        win={vitoria}
-                    />}
+                {currentState===2&&router.push(`/${router.query}/${vitoria}`)}
             </Widget.Content>
             </Widget>
             <Footer />

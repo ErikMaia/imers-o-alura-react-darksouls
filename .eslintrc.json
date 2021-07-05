@@ -20,5 +20,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "prefer-const": "warn"
+
     }
 }

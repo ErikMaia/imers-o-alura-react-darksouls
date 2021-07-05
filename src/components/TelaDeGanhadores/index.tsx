@@ -4,9 +4,15 @@ import Button from '../Button'
 import {FaCheckCircle, FaTimesCircle} from 'react-icons/fa'
 import FinalTable from '../FinalTable'
 import Link from 'next/link'
-interface props{
+
+interface Person{
     name:string,
-    win:number
+    winer:string
+}
+
+interface Props{
+    scoreboard:Person[],
+    current:Person
 }
 
 const WinnerScream = styled.div`
@@ -23,12 +29,13 @@ const LinkReturn = styled.div`
     cursor:pointer;
 `
 
-const TelaFinal = ({ name, win }:props)=>{
+const TelaFinal = ({scoreboard, current}:Props)=>{
+    const {name,winer} = current
     return(
         <WinnerScream>
             <p>Mandou bem, {name}!</p>
-            <h2>Você Acertou {win} Parabéns!</h2>
-            <FinalTable thiswinner={{name,rightQuestions:win}}/>
+            <h2>Você Acertou {winer} Parabéns!</h2>
+            <FinalTable scoreboard={scoreboard}/>
             <Button>ADICIONAR PROJETO</Button>
             <Link href='/quiz'>
                 <LinkReturn>
